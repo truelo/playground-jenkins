@@ -29,7 +29,7 @@ pipeline {
             echo 'This will run only if the run was marked as unstable'
         }
         changed {
-            echo -e 'This will run only if the state of the Pipeline has changed\nFor example, if the Pipeline was previously failing but is now successful'
+            sh 'echo -e "This will run only if the state of the Pipeline has changed.\nFor example, if the Pipeline was previously failing but is now successful."
         }
     }
 }
