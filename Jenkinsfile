@@ -11,7 +11,7 @@ pipeline {
                     }
                 }
                 
-                sh 'echo "Bye World"; exit 1'
+                sh 'echo "Bye World"; exit 0'
             }
         }
     }
@@ -29,7 +29,7 @@ pipeline {
             echo 'This will run only if the run was marked as unstable'
         }
         changed {
-            echo 'This will run only if the state of the Pipeline has changed\nFor example, if the Pipeline was previously failing but is now successful'
+            echo -e 'This will run only if the state of the Pipeline has changed\nFor example, if the Pipeline was previously failing but is now successful'
         }
     }
 }
