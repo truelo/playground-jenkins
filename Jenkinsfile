@@ -21,9 +21,15 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
+            mail to: 'james.wang@optum.com',
+                subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
+                body: "BUILD_URL: ${env.BUILD_URL}"
         }
         failure {
             echo 'This will run only if failed'
+            mail to: 'james.wang@optum.com',
+                subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                body: "Something is wrong with ${env.BUILD_URL}"
         }
         unstable {
             echo 'This will run only if the run was marked as unstable'
