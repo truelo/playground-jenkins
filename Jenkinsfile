@@ -11,7 +11,7 @@ pipeline {
                     }
                 }
                 
-                sh 'echo "Bye World"'
+                sh 'echo "Bye World"; exit 1'
             }
         }
     }
