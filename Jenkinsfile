@@ -6,8 +6,8 @@ pipeline {
                 sh 'echo "Hello World"'
 
                 timeout(time: 3, unit: 'MINUTES') {
-                    retry(5) {
-                        sh './flakey-deploy.sh'
+                    retry(3) {
+                        sh 'echo "Hello..."'
                     }
                 }
                 
